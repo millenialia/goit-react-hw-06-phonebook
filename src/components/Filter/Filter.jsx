@@ -10,9 +10,10 @@ export const Filter = () => {
 
   const dispatch = useDispatch();
   const filter = useSelector(getFilter);
-  const handleChange = filter => dispatch(setFilter(filter));
-
-  const inputRef = useRef();
+  const handleChange = (e) => {
+    const filterName = e.currentTarget.value
+    dispatch(setFilter(filterName));
+  }
 
     return (
         <label htmlFor="filter" className= {css.filter}>
@@ -20,10 +21,10 @@ export const Filter = () => {
         <input
           type="text"
           name="filter"
-          ref={inputRef}
+
           pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           onChange={handleChange}
-          value={filter}
+          value={filter.value}
         />
       </label>
   )

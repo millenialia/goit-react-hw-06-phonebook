@@ -4,7 +4,7 @@ import { getFilter, getContacts } from "redux/selectors";
 import css  from "./ContactList.module.css";
 
 const getVisibleContacts = (contacts, filter) => {
-  return contacts.filter(contact => contact.contactName.toLowerCase().includes(filter.toLowerCase()))
+  return contacts.filter(contact => contact.contactName.toLowerCase().includes(filter.value.toLowerCase()))
 };
 
 export const ContactList = () => {
