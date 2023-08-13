@@ -1,4 +1,3 @@
-import { useRef } from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import { getFilter } from "redux/selectors";
 import { setFilter } from 'redux/filterSlice';
@@ -14,7 +13,6 @@ export const Filter = () => {
     const filterName = e.currentTarget.value
     dispatch(setFilter(filterName));
   }
-
     return (
         <label htmlFor="filter" className= {css.filter}>
           Find contacts by name
